@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Coffee Menu</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fefbf4;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 26px;
+            font-weight: bold;
+            color: rgb(117, 74, 74);
+        }
+
+        /* Large Screens  3 cards */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 14px;
+            box-sizing: border-box;
+        }
+
+        .thumb {
+            width: 150px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            flex-shrink: 0;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .price {
+            color: #d6a63b;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .desc {
+            margin-top: 10px;
+            color: #666;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* Medium Screens  2 cards */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Small Screens 1 card */
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .card {
+                flex-direction: column;
+            }
+
+            .thumb {
+                width: 300px;
+                height: 200px;
+            }
+
+            .top h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Coffee Menu</h1>
+
+    <div class="container">
+
+        <div class="card">
+            <img class="thumb"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/960px-Cappuccino_at_Sightglass_Coffee.jpg"
+                alt="Cappuccino img">
+            <div class="content">
+                <div class="top">
+                    <h3>Cappuccino</h3>
+                    <span class="price">$49</span>
+                </div>
+                <p class="desc">Usage of the Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="thumb"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP7PzXpj11ISpb2pI5WjxOaFayqiv2w4qZxA&s"
+                alt="Americano Image">
+            <div class="content">
+                <div class="top">
+                    <h3>Americano</h3>
+                    <span class="price">$49</span>
+                </div>
+                <p class="desc">Usage of the Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="thumb"
+                src="https://www.sharmispassions.com/wp-content/uploads/2012/07/espresso-coffee-recipe04-500x375.jpg"
+                alt="Espresso Image">
+            <div class="content">
+                <div class="top">
+                    <h3>Espresso</h3>
+                    <span class="price">$49</span>
+                </div>
+                <p class="desc">Usage of the Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="thumb"
+                src="https://roastercoffees.com/wp-content/uploads/2021/04/What-Is-Macchiato-1024x683.webp"
+                alt="Macchiato Image">
+            <div class="content">
+                <div class="top">
+                    <h3>Macchiato</h3>
+                    <span class="price">$49</span>
+                </div>
+                <p class="desc">Usage of the Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="thumb" src="https://www.lovethecook.com/cdn/shop/files/Mochacappu800_1200x1200.jpg?v=1746558777"
+                alt="Mocha Image">
+            <div class="content">
+                <div class="top">
+                    <h3>Mocha</h3>
+                    <span class="price">$49</span>
+                </div>
+                <p class="desc">Usage of the Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="thumb"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR8Q_RrELDLpBSuhHF9CEAWgSBo9mRQtSy-g&s"
+                alt="Coffee Latte Image">
+            <div class="content">
+                <div class="top">
+                    <h3>Coffee Latte</h3>
+                    <span class="price">$49</span>
+                </div>
+                <p class="desc">Usage of the Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="thumb"
+                src="https://images.squarespace-cdn.com/content/v1/50e25057e4b0395512a28b45/1415267164876-XI06O02WPKPYF5RRH0YR/Piccollo+Latte.jpeg"
+                alt="Piccolo Latte Image">
+            <div class="content">
+                <div class="top">
+                    <h3>Piccolo Latte</h3>
+                    <span class="price">$49</span>
+                </div>
+                <p class="desc">Usage of the Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="thumb" src="https://www.gourmetkava.cz/modules/ph_simpleblog/featured/80.jpg"
+                alt="Ristretto Image">
+            <div class="content">
+                <div class="top">
+                    <h3>Ristretto</h3>
+                    <span class="price">$49</span>
+                </div>
+                <p class="desc">Usage of the Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="thumb"
+                src="https://www.thespruceeats.com/thmb/5PcCBEaUd1U1eFxfcKKPLVnZzfA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/affogato-4776668-hero-08-40d7a68d12ba46f48eaea3c43aba715c.jpg"
+                alt="Affogato Image">
+            <div class="content">
+                <div class="top">
+                    <h3>Affogato</h3>
+                    <span class="price">$49</span>
+                </div>
+                <p class="desc">Usage of the Internet is becoming more common due to rapid advance.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
