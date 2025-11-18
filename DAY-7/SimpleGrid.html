@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Grid</title>
+    <style>
+        .container {
+            width: 600px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+
+        .box {
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .b1 {
+            background-color: rgb(253, 63, 63);
+        }
+
+        .b2 {
+            background-color: rgb(41, 41, 242);
+        }
+
+        .b3 {
+            background-color: rgb(244, 216, 57);
+            color: black;
+        }
+
+        .b4 {
+            background-color: rgb(125, 17, 184);
+        }
+
+        .b5 {
+            background-color: rgb(27, 228, 27);
+        }
+
+        .b6 {
+            background-color: rgb(8, 247, 255);
+            color: black;
+        }
+
+        .b7 {
+            background-color: rgb(255, 149, 0);
+        }
+
+        .b8 {
+            background-color: rgb(0, 152, 152);
+        }
+
+        .b9 {
+            background-color: maroon;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box b1">2.</div>
+        <div class="box b2">3.</div>
+        <div class="box b3">4.</div>
+
+        <div class="box b4">5.</div>
+        <div class="box b5">6.</div>
+        <div class="box b6">1.</div>
+
+        <div class="box b7">7.</div>
+        <div class="box b8">8.</div>
+        <div class="box b9">9.</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Pacifico', 'Lobster', cursive;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .table {
+            width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 100px repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .time {
+            font-weight: bold;
+            text-align: center;
+            padding-top: 10px;
+            height: 35px;
+            border-radius: 20px;
+            background: #c7f4ff;
+        }
+
+        .day {
+            background: #f4e7a5;
+            text-align: center;
+            padding: 12px 0;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .cell {
+            height: 35px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 14px;
+        }
+
+        .pink {
+            background: #fbd3e8;
+        }
+
+        .yellow {
+            background: #f4e7a5;
+        }
+
+        .blue {
+            background: #bbe8f4;
+        }
+
+        .note {
+            width: 900px;
+            height: 25px;
+            margin: 20px auto;
+            background: #bbe8f4;
+            border-radius: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>✨ Weekly Schedule ✨</h1>
+
+    <div class="table">
+
+        <!-- Headings -->
+        <div></div>
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+
+        <!-- Rows -->
+        <div class="time">08:00</div>
+        <div class="cell pink">English</div>
+        <div class="cell yellow">Maths</div>
+        <div class="cell pink">EVS</div>
+        <div class="cell yellow">Maths</div>
+        <div class="cell pink">English</div>
+
+        <div class="time">09:00</div>
+        <div class="cell blue">Science</div>
+        <div class="cell yellow">English</div>
+        <div class="cell pink">Drawing</div>
+        <div class="cell yellow">PT</div>
+        <div class="cell pink">Science</div>
+
+        <div class="time">10:00</div>
+        <div class="cell pink">Maths</div>
+        <div class="cell yellow">EVS</div>
+        <div class="cell blue">English</div>
+        <div class="cell yellow">Science</div>
+        <div class="cell pink">Drawing</div>
+
+        <div class="time">11:00</div>
+        <div class="cell blue">Hindi</div>
+        <div class="cell yellow">Maths</div>
+        <div class="cell pink">EVS</div>
+        <div class="cell yellow">English</div>
+        <div class="cell pink">Hindi</div>
+
+        <div class="time">12:00</div>
+        <div class="cell pink">Lunch Break</div>
+        <div class="cell yellow">Lunch Break</div>
+        <div class="cell blue">Lunch Break</div>
+        <div class="cell yellow">Lunch Break</div>
+        <div class="cell pink">Lunch Break</div>
+
+        <div class="time">13:00</div>
+        <div class="cell blue">PT</div>
+        <div class="cell yellow">Science</div>
+        <div class="cell pink">Maths</div>
+        <div class="cell yellow">Drawing</div>
+        <div class="cell pink">EVS</div>
+
+        <div class="time">14:00</div>
+        <div class="cell pink">Computer</div>
+        <div class="cell yellow">EVS</div>
+        <div class="cell blue">Maths</div>
+        <div class="cell yellow">Science</div>
+        <div class="cell pink">English</div>
+
+        <div class="time">15:00</div>
+        <div class="cell blue">General Knowledge</div>
+        <div class="cell yellow">Hindi</div>
+        <div class="cell pink">Science</div>
+        <div class="cell yellow">EVS</div>
+        <div class="cell pink">Computer</div>
+
+        <div class="time">16:00</div>
+        <div class="cell pink">Games</div>
+        <div class="cell yellow">Drawing</div>
+        <div class="cell blue">Games</div>
+        <div class="cell yellow">PT</div>
+        <div class="cell pink">Games</div>
+
+    </div>
+
+    <div class="note">Note: All subjects are for primary class.</div>
+
+</body>
+
+</html>
