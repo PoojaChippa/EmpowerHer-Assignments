@@ -51,7 +51,7 @@ After generating the initial version, I made several manual improvements to cust
 ### **2. Edited & Updated Skills Section**
 
 - Added accurate technical skills:
-  - Python, Machine Learning, Java, C, C++
+  - Python,HTML, CSS, Machine Learning, Java, C, C++
   - MySQL
 - Updated soft skills:
   - Problem-Solving, Analytical Thinking
