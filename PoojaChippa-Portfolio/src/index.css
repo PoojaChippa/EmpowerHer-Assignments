@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 200 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 15%;
+
+    --primary: 180 30% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 165 45% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 15% 96%;
+    --muted-foreground: 30 10% 46%;
+
+    --accent: 25 85% 65%;
+    --accent-foreground: 200 25% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 13% 91%;
+    --input: 30 13% 91%;
+    --ring: 180 30% 35%;
+
+    --radius: 0.75rem;
+
+    /* Portfolio-specific tokens - Warm Teal Theme */
+    --hero-gradient-start: 180 30% 35%;
+    --hero-gradient-end: 165 35% 42%;
+    --teal-accent: 165 45% 50%;
+    --gold-accent: 25 85% 65%;
+    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+  }
+
+  .dark {
+    --background: 200 25% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 200 25% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 200 25% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 165 45% 50%;
+    --primary-foreground: 200 25% 12%;
+
+    --secondary: 180 30% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 200 20% 20%;
+    --muted-foreground: 30 13% 70%;
+
+    --accent: 25 85% 65%;
+    --accent-foreground: 200 25% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 20% 20%;
+    --input: 200 20% 20%;
+    --ring: 0 0% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
