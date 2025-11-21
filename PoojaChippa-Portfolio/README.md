@@ -38,7 +38,7 @@ Lovable AI helped speed up the design process with a modern UI foundation.
 
 ---
 
-## 🛠️ Manual Changes Made by Me
+## Manual Changes Made by Me
 
 After generating the initial version, I made several manual improvements to customize the website and correct details:
 
