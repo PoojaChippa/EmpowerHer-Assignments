@@ -1,17 +1,17 @@
-# 🌐 Personal Portfolio – Pooja Chippa
+# Personal Portfolio – Pooja Chippa
 
 This is my personal portfolio website showcasing my education, technical strengths, skills, and project experience.  
 The website was first generated using **Lovable AI**, and later refined manually to improve design, accuracy, and personal branding.
 
 ---
 
-## 🚀 Live Website
+## Live Website
 
 👉 _Add your GitHub Pages link here after deployment_
 
 ---
 
-## 🧠 About the Portfolio
+## About the Portfolio
 
 This portfolio highlights:
 
@@ -24,7 +24,7 @@ The goal is to present a clean, modern, professional online identity.
 
 ---
 
-## 🤖 AI Tools Used – Lovable AI
+## AI Tools Used – Lovable AI
 
 This project was initially created using **Lovable AI**, which generated:
 
@@ -69,16 +69,5 @@ After generating the initial version, I made several manual improvements to cust
 - Ensured all links (LinkedIn, GitHub) are correct and working
 
 These changes ensured the site reflects **my personal identity and skills**, not generic AI output.
-
----
-
-## 🛠️ Tech Stack
-
-- **HTML5**
-- **CSS3**
-- **JavaScript**
-- **TypeScript**
-- **Responsive Web Design**
-- **GitHub Pages** for hosting
 
 ---
