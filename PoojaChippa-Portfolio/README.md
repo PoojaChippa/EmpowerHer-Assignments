@@ -7,7 +7,7 @@ The website was first generated using **Lovable AI**, and later refined manually
 
 ## Live Website
 
-👉 _Add your GitHub Pages link here after deployment_
+https://portfolio-drab-psi-75.vercel.app/
 
 ---
 
