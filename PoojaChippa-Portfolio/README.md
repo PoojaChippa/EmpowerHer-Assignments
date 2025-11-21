@@ -5,12 +5,6 @@ The website was first generated using **Lovable AI**, and later refined manually
 
 ---
 
-## Live Website
-
-👉 _Add your GitHub Pages link here after deployment_
-
----
-
 ## About the Portfolio
 
 This portfolio highlights:
