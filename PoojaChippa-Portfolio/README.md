@@ -58,7 +58,7 @@ After generating the initial version, I made several manual improvements to cust
 - Enhanced visual layout for skill cards/icons
 - Removed irrelevant or auto-generated skills
 
-### ✔ **3. Other Manual Enhancements**
+### **3. Other Manual Enhancements**
 
 - Tuned typography for a cleaner reading experience
 - Adjusted padding, spacing, and alignment
