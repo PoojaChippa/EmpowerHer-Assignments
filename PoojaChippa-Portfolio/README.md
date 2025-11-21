@@ -42,13 +42,13 @@ Lovable AI helped speed up the design process with a modern UI foundation.
 
 After generating the initial version, I made several manual improvements to customize the website and correct details:
 
-### ✔ **1. Updated Profile Photo**
+### **1. Updated Profile Photo**
 
 - Replaced AI-generated placeholder image with my actual photo
 - Adjusted image size, border-radius, and placement for a more polished look
 - Improved responsiveness across devices
 
-### ✔ **2. Edited & Updated Skills Section**
+### **2. Edited & Updated Skills Section**
 
 - Added accurate technical skills:
   - Python, Machine Learning, Java, C, C++
