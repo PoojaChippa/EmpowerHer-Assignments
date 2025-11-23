@@ -45,7 +45,10 @@ After generating the initial version, I made several manual improvements to cust
 ### **2. Edited & Updated Skills Section**
 
 - Added accurate technical skills:
-  - Python,HTML, CSS, Machine Learning, Java, C, C++
+  <<<<<<< HEAD
+  - # Python,HTML, CSS, Machine Learning, Java, C, C++
+  - Python, HTML, CSS, Machine Learning, Java, C, C++
+    > > > > > > > dba2e2b1881cdec8964f33766349d416d4618bf0
   - MySQL
 - Updated soft skills:
   - Problem-Solving, Analytical Thinking
