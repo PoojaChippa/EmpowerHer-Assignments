@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App with localStorage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 8px 14px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Notes</h1>
+
+    <!-- Text area where user enters notes -->
+    <textarea id="notesArea" placeholder="Type your notes here..."></textarea>
+
+    <!-- Buttons for Save, Load and Clear actions -->
+    <div>
+        <button id="saveBtn">Save Notes</button>
+        <button id="loadBtn">Load Notes</button>
+        <button id="clearBtn">Clear Notes</button>
+    </div>
+
+    <!-- Message area to show success / error info to user -->
+    <p id="message"></p>
+
+    <script>
+        // Get references to DOM elements
+        const notesArea = document.getElementById("notesArea");
+        const saveBtn = document.getElementById("saveBtn");
+        const loadBtn = document.getElementById("loadBtn");
+        const clearBtn = document.getElementById("clearBtn");
+        const message = document.getElementById("message");
+
+        // A key name to use in localStorage for storing notes
+        const NOTES_KEY = "userNotes";
+
+
+        // Function: Load notes on page load
+        window.addEventListener("load", function () {
+            // Check if any notes are already saved in localStorage
+            const savedNotes = localStorage.getItem(NOTES_KEY);
+
+            if (savedNotes !== null) {
+                // If notes exist, display them in the textarea
+                notesArea.value = savedNotes;
+                message.textContent = "Notes loaded from previous session.";
+            } else {
+                message.textContent = "No saved notes found.";
+            }
+        });
+
+        // Function: Save notes to localStorage
+        saveBtn.addEventListener("click", function () {
+            const notesText = notesArea.value.trim(); // Trim to avoid spaces-only content
+
+            // Validation: Do not save empty notes
+            if (notesText === "") {
+                message.textContent = "Cannot save empty notes. Please type something.";
+                return; // Stop function if notes are empty
+            }
+
+            // Save notes in localStorage
+            localStorage.setItem(NOTES_KEY, notesText);
+            message.textContent = "Notes saved successfully!";
+        });
+
+        // Function: Load notes when 'Load Notes' button is clicked
+        loadBtn.addEventListener("click", function () {
+            const savedNotes = localStorage.getItem(NOTES_KEY);
+
+            if (savedNotes !== null) {
+                notesArea.value = savedNotes;
+                message.textContent = "Notes loaded successfully.";
+            } else {
+                message.textContent = "No notes found in storage.";
+            }
+        });
+
+        // Function: Clear notes from localStorage and textarea
+        clearBtn.addEventListener("click", function () {
+            // Remove the item from localStorage
+            localStorage.removeItem(NOTES_KEY);
+
+            // Also clear the textarea on the page
+            notesArea.value = "";
+            message.textContent = "Notes cleared from storage.";
+        });
+    </script>
+
+</body>
+
+</html>

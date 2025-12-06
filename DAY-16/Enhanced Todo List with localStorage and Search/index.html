@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced Todo List</title>
+  <style>
+    /* Basic styling for layout and clarity */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fafafa;
+      padding: 8px;
+      margin-bottom: 8px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+    }
+
+    .task-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .task-text {
+      max-width: 300px;
+      word-wrap: break-word;
+    }
+
+    /* Visually indicate completed tasks */
+    .completed .task-text {
+      text-decoration: line-through;
+      color: #888;
+    }
+
+    .delete-btn {
+      background-color: #dc3545;
+    }
+  </style>
+
+  <!-- External JavaScript file -->
+  <script src="script.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Enhanced Todo List</h1>
+
+    <!-- Row for adding a new task -->
+    <div class="input-row">
+      <input type="text" id="taskInput" placeholder="Enter a new task..." />
+      <button id="addTaskBtn">Add Task</button>
+    </div>
+
+    <!-- Search bar for real-time search -->
+    <input type="text" id="searchInput" placeholder="Search tasks..." />
+
+    <!-- List where tasks will be shown -->
+    <ul id="taskList"></ul>
+  </div>
+
+
+</body>
+
+</html>

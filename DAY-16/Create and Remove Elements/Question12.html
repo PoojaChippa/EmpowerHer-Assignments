@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraph Manager</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 10px 15px;
+        }
+
+        #container {
+            margin-top: 20px;
+            border: 1px solid gray;
+            padding: 15px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Paragraph Manager</h2>
+
+    <!-- Buttons -->
+    <button id="addBtn">Add Paragraph</button>
+    <button id="removeBtn">Remove Last Paragraph</button>
+
+    <!-- Container where paragraphs will appear -->
+    <div id="container"></div>
+
+    <script>
+        // Accessing buttons and container div
+        const addBtn = document.getElementById("addBtn");
+        const removeBtn = document.getElementById("removeBtn");
+        const container = document.getElementById("container");
+
+        // Add Paragraph Button Handler
+        addBtn.addEventListener("click", function () {
+            // 1. Create a new <p> element
+            const para = document.createElement("p");
+
+            // 2. Add text to the paragraph
+            para.textContent = "This is a new paragraph.";
+
+            // 3. Append the paragraph inside the container div
+            container.appendChild(para);
+        });
+
+        // Remove Last Paragraph Button Handler
+        removeBtn.addEventListener("click", function () {
+            // Check if container has any child paragraphs
+            if (container.lastChild) {
+                // removeChild removes the last paragraph added
+                container.removeChild(container.lastChild);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
