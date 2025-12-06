@@ -33,13 +33,29 @@ It supports:
 - **Persistent Storage**  
   Tasks are stored in `localStorage` under the key:
 
-  ```text
-  enhancedTodoTasks
-  ```
-
-- **Each task is saved as an object: **
+- **Each task is saved as an object**
   {
   "id": "unique-id",
   "text": "Task description",
   "completed": false
   }
+
+## How to Run the Application
+
+- Download or clone the project folder.
+
+- Open index.html in any modern browser (Chrome, Firefox, Edge, etc.).
+
+- Start adding tasks!
+
+- No server or build step is required.
+
+## Technologies Used
+
+- HTML5
+
+- CSS3
+
+- JavaScript (ES6)
+
+- localStorage API
