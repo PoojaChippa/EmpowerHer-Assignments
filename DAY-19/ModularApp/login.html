@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <h1>Login</h1>
+    <form id="login-form">
+        <input type="email" id="email" placeholder="Email" required /><br />
+        <input type="password" id="password" placeholder="Password" required /><br />
+        <button type="submit">Login</button>
+    </form>
+    <p id="error"></p>
+
+    <div id="footer"></div>
+
+    <script type="module">
+        import { getNavbar } from './js/navbar.js';
+        import { getFooter } from './js/footer.js';
+
+        document.getElementById('navbar').innerHTML = getNavbar();
+        document.getElementById('footer').innerHTML = getFooter();
+
+        const form = document.getElementById('login-form');
+        const errorEl = document.getElementById('error');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const stored = JSON.parse(localStorage.getItem('user'));
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (stored && stored.email === email && stored.password === password) {
+                localStorage.setItem('currentUser', JSON.stringify(stored));
+                window.location.href = 'todos.html';
+            } else {
+                errorEl.textContent = 'Invalid email or password';
+            }
+        });
+    </script>
+</body>
+
+</html>
