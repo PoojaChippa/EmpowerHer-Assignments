@@ -1,9 +1,9 @@
-import UserData from "./UserData";
+import UserProfile from "./UserProfile";
 
 function App() {
   return (
-    <div style={{ padding: "20px" }}>
-      <UserData />
+    <div>
+      <UserProfile />
     </div>
   );
 }
