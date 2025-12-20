@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+/* Main Container */
+.todo-container {
+    width: 400px;
+    margin: 40px auto;
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Add Todo */
+.add-todo {
+    display: flex;
+    gap: 10px;
+}
+
+.add-todo input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.add-todo input:focus {
+    border-color: #4a90e2;
+}
+
+.add-todo button {
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    cursor: pointer;
+}
+
+.add-todo button:hover {
+    background-color: #357abd;
+}
+
+/* Todo List */
+.todo-list {
+    margin-top: 20px;
+}
+
+/* Todo Item */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 6px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.todo-item span {
+    color: #333;
+}
+
+/* Delete Button */
+.todo-item button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 16px;
+}
+
+.todo-item button:hover {
+    color: red;
+}
