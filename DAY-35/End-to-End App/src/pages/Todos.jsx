@@ -14,70 +14,84 @@ export default function Todos() {
   const [todos, setTodos] = useState([]);
   const [selectedTodo, setSelectedTodo] = useState(null);
   const [newTodo, setNewTodo] = useState("");
+  const [filter, setFilter] = useState("all");
 
-  // 🔹 Load todos
   const loadTodos = async () => {
-    if (!user) return;
     const data = await todoService.fetchTodos(user.uid);
     setTodos(data);
   };
 
   useEffect(() => {
-    if (!user) return;
-
-    let isMounted = true;
-
-    const fetchTodos = async () => {
-      const data = await todoService.fetchTodos(user.uid);
-      if (isMounted) setTodos(data);
-    };
-
-    fetchTodos();
-
-    return () => {
-      isMounted = false;
-    };
+    if (user) loadTodos();
   }, [user]);
 
-  // 🔹 Create todo
-  const handleCreateTodo = async () => {
-    if (!newTodo.trim()) return;
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "completed") return todo.completed;
+    if (filter === "pending") return !todo.completed;
+    return true;
+  });
 
+  const createTodo = async () => {
+    if (!newTodo.trim()) return;
     await todoService.createTodo({
       title: newTodo,
       completed: false,
       uid: user.uid,
       createdAt: Date.now(),
     });
-
     setNewTodo("");
+    loadTodos();
+  };
+
+  const toggleStatus = async () => {
+    await todoService.updateTodo(selectedTodo.id, {
+      completed: !selectedTodo.completed,
+    });
+    loadTodos();
+  };
+
+  const deleteTodo = async () => {
+    await todoService.deleteTodo(selectedTodo.id);
+    setSelectedTodo(null);
     loadTodos();
   };
 
   return (
     <div className="h-screen flex flex-col">
-      <Navbar />
+      <Navbar filter={filter} setFilter={setFilter} />
 
       <div className="flex flex-1">
-        <Sidebar todos={todos} onSelect={setSelectedTodo} />
+        <Sidebar
+          todos={filteredTodos}
+          selectedTodo={selectedTodo}
+          onSelect={setSelectedTodo}
+        />
 
         <main className="flex-1 p-6">
-          {/* Create Todo */}
           <div className="flex gap-2 mb-6">
             <Input
-              placeholder="Enter new todo"
+              placeholder="New todo"
               value={newTodo}
               onChange={(e) => setNewTodo(e.target.value)}
             />
-            <Button onClick={handleCreateTodo}>Add</Button>
+            <Button onClick={createTodo}>Add</Button>
           </div>
 
-          {/* Todo Details */}
           {selectedTodo ? (
             <>
-              <h2 className="text-xl font-semibold mb-2">
+              <h2 className="text-xl font-semibold mb-4">
                 {selectedTodo.title}
               </h2>
+
+              <div className="flex gap-2 mb-4">
+                <Button onClick={toggleStatus}>
+                  Mark as {selectedTodo.completed ? "Pending" : "Completed"}
+                </Button>
+
+                <Button variant="destructive" onClick={deleteTodo}>
+                  Delete
+                </Button>
+              </div>
 
               <UpdateTodoModal todo={selectedTodo} refreshTodos={loadTodos} />
             </>
