@@ -1,4 +1,4 @@
-1. Node.js Architecture
+\*\*1. Node.js Architecture
 
 The architecture of Node.js is grounded in a single-threaded, event-driven, non-blocking model. It manages to serve all the client requests properly without depending on the multiple threads.
 
@@ -86,8 +86,8 @@ Enables handling of multiple requests concurrently
 
 ---
 
-2. libuv
-   What is libuv?
+\*\*2. libuv
+What is libuv?
 
 libuv is basically a low-level C library that Node.js employs to deal with asynchronous operations. It is the main component that makes it possible for Node.js to execute non-blocking input/output operations and control the event loop on various operating systems.
 
@@ -123,7 +123,7 @@ Without libuv, Node.js would not have been able to produce its non-blocking and 
 
 ---
 
-3. Thread Pool
+\*\*3. Thread Pool
 
 - What is a thread pool?
 
@@ -155,8 +155,8 @@ A thread pool is defined to be a collection of threads that execute tasks in the
 
 ---
 
-4. Worker Threads
-   What are worker threads?
+\*\*4. Worker Threads
+What are worker threads?
 
 Worker threads are distinct JavaScript execution threads that let Node.js execute JavaScript in parallel, detached from the main thread.
 
@@ -183,56 +183,56 @@ Worker threads are distinct JavaScript execution threads that let Node.js execut
 
 ---
 
-4. Event Loop Queues
+\*\*5. Event Loop Queues
 
 Event Loop Queues are data structures used by Node.js to store asynchronous tasks that are waiting to be executed by the event loop. These queues help Node.js manage task execution order without blocking the main thread.
 
-Macro Task Queue
+- Macro Task Queue
 
 The Macro Task Queue contains tasks scheduled to run in future event loop cycles.
 
-Characteristics
+. Characteristics
 
-Executed after micro tasks are completed
+1. Executed after micro tasks are completed
 
-Handles larger, time-based, or I/O-related tasks
+2. Handles larger, time-based, or I/O-related tasks
 
-Examples of Macro Tasks
+. Examples of Macro Tasks
 
-setTimeout()
+1. setTimeout()
 
-setInterval()
+2. setInterval()
 
-setImmediate()
+3. setImmediate()
 
 I/O callbacks (file system, network events)
 
-Micro Task Queue
+- Micro Task Queue
 
 The Micro Task Queue contains high-priority tasks that must be executed immediately after the current JavaScript execution completes.
 
-Characteristics
+. Characteristics
 
-Executed before macro tasks
+1. Executed before macro tasks
 
-Ensures critical callbacks run as soon as possible
+2. Ensures critical callbacks run as soon as possible
 
-Examples of Micro Tasks
+. Examples of Micro Tasks
 
-Promise.then() callbacks
+1. Promise.then() callbacks
 
-process.nextTick()
+2. process.nextTick()
 
-queueMicrotask()
+3. queueMicrotask()
 
-Execution Priority Between Macro and Micro Tasks
+- Execution Priority Between Macro and Micro Tasks
 
-The execution order followed by Node.js is:
+. The execution order followed by Node.js is:
 
-Current synchronous JavaScript execution
+1. Current synchronous JavaScript execution
 
-Micro Task Queue (highest priority)
+2. Micro Task Queue (highest priority)
 
-Macro Task Queue
+3. Macro Task Queue
 
 This priority system ensures that important callbacks are executed without delay.
