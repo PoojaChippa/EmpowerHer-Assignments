@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": 1768581386970,
+      "name": "Karthik",
+      "age": 21
+    },
+    {
+      "id": 1768581427240,
+      "name": "Pooja",
+      "age": 21
+    }
+  ],
+  "todos": [
+    {
+      "id": 1768581704240,
+      "title": "Learn Express",
+      "completed": false
+    },
+    {
+      "id": 1768581948942,
+      "title": "Learn python",
+      "completed": true
+    },
+    {
+      "id": 1768581976038,
+      "title": "Learn C",
+      "completed": true
+    }
+  ]
+}
