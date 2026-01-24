@@ -1,0 +1,74 @@
+step:1
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    age INTEGER,
+    course TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+step:2
+INSERT INTO students (name, email, age, course)
+VALUES
+('Aarav Kumar', 'aarav.kumar@gmail.com', 21, 'Computer Science'),
+('Priya Sharma', 'priya.sharma@gmail.com', 22, 'Information Technology'),
+('Rohit Verma', 'rohit.verma@gmail.com', 20, 'Computer Science'),
+('Ananya Iyer', 'ananya.iyer@gmail.com', 23, 'Data Science'),
+('Karan Patel', 'karan.patel@gmail.com', 19, 'Mechanical Engineering'),
+('Sneha Reddy', 'sneha.reddy@gmail.com', 21, 'Data Science'),
+('Vikram Singh', 'vikram.singh@gmail.com', 24, 'Information Technology');
+
+step:3
+SELECT * FROM students;
+
+Output:
+SQL CRUD Operations/Student_Table.png
+
+
+step:4
+SELECT *
+FROM students
+WHERE age > 20;
+
+Output:
+SQL CRUD Operations/Student older than 20.png
+
+step:5
+SELECT name, email
+FROM students;
+
+Output:
+SQL CRUD Operations/contact_list.png
+
+step:6
+SELECT *
+FROM students
+WHERE course = 'Computer Science';
+
+Output:
+SQL CRUD Operations/CS students.png
+
+step:7
+UPDATE students
+SET age = 22
+WHERE id = 3;
+
+step:8
+UPDATE students
+SET course = 'Artificial Intelligence'
+WHERE course = 'Data Science';
+
+step:9
+DELETE FROM students
+WHERE id = 5;
+
+
+step:10
+DELETE FROM students
+WHERE age < 20;
+
+
+
+
+
