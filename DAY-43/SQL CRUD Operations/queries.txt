@@ -68,7 +68,8 @@ step:10
 DELETE FROM students
 WHERE age < 20;
 
-
+Output:
+SQL CRUD Operations/All Student_list.png
 
 
 
