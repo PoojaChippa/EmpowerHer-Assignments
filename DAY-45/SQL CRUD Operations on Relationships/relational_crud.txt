@@ -1,0 +1,179 @@
+Step 1: Create Tables with Relationships
+
+Table 1: users
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Table 2: orders
+
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    amount INTEGER NOT NULL,
+    status TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+
+
+Step 2: Insert Data
+
+INSERT INTO users (name, email) VALUES
+('Ravi', 'ravi@gmail.com'),
+('Anita', 'anita@gmail.com'),
+('Suresh', 'suresh@gmail.com'),
+('Meena', 'meena@gmail.com'),
+('Kiran', 'kiran@gmail.com');
+
+
+INSERT INTO orders (user_id, amount, status) VALUES
+(1, 500, 'placed'),
+(1, 1200, 'delivered'),
+(1, 700, 'shipped'),
+(2, 300, 'placed'),
+(2, 900, 'cancelled'),
+(3, 1500, 'placed'),
+(4, 2000, 'shipped'),
+(4, 1000, 'placed'),
+(5, 400, 'delivered');
+
+
+
+
+STEP 3: READ DATA
+
+1. Fetch all users.
+
+SELECT * FROM users;
+
+Output:
+SQL CRUD Operations on Relationships/user_table.png
+
+2. Fetch all orders.
+
+SELECT * FROM orders;
+
+Output:
+SQL CRUD Operations on Relationships/orders_table.png
+
+
+3. Fetch all orders for a specific user.
+
+SELECT *
+FROM orders
+WHERE user_id = 1;
+
+Output:
+SQL CRUD Operations on Relationships/fetching specific user_id.png
+
+
+4. Fetch users who have more than one order.
+
+SELECT u.id, u.name, COUNT(o.id) AS order_count
+FROM users u
+JOIN orders o ON u.id = o.user_id
+GROUP BY u.id, u.name
+HAVING COUNT(o.id) > 1;
+
+Output:
+SQL CRUD Operations on Relationships/users who have more than one order.png
+
+
+5. Fetch total order amount per user.
+
+SELECT u.name, SUM(o.amount) AS total_amount
+FROM users u
+JOIN orders o ON u.id = o.user_id
+GROUP BY u.name;
+
+Output:
+SQL CRUD Operations on Relationships/total order amount per user.png
+
+Step 4: Update Data
+
+1. Update the email of one user.
+
+UPDATE users
+SET email = 'anita_updated@gmail.com'
+WHERE id = 2;
+
+SELECT * FROM users;
+
+Output:
+SQL CRUD Operations on Relationships/Update the email of one user..png
+
+2. Update the status of all orders for a specific user.
+
+UPDATE orders
+SET status = 'completed'
+WHERE user_id = 1;
+
+SELECT * FROM orders;
+
+Output:
+SQL CRUD Operations on Relationships/all orders for a specific user.png
+
+
+3. Update order amount for a single order.
+
+UPDATE orders
+SET amount = 650
+WHERE id = 1;
+
+SELECT * FROM orders;
+
+Output:
+SQL CRUD Operations on Relationships/Update order amount for a single order.png
+
+
+
+
+STEP 5: DELETE DATA
+
+1. Delete one order using order id.
+
+DELETE FROM orders
+WHERE id = 9;
+SELECT * FROM orders;
+
+Output:
+SQL CRUD Operations on Relationships/Delete one order using order id.png
+
+
+2. Delete all orders of a specific user.
+
+DELETE FROM orders
+WHERE user_id = 3;
+SELECT * FROM orders;
+
+Output:
+SQL CRUD Operations on Relationships/Delete all orders of a specific user.png
+
+
+3. Attempt deleting a user with existing orders and observe the behavior.
+
+DELETE FROM users
+WHERE id = 1;
+SELECT * FROM users;
+
+Output:
+Error: Failed to run sql query: ERROR: 23503: update or delete on table "users" violates foreign key constraint "orders_user_id_fkey" on table "orders" DETAIL: Key (id)=(1) is still referenced from table "orders".
+
+
+
+Step 6: Conceptual Question (Short Answer)
+Answer briefly in comments:
+
+-- Why should orders not be stored inside the users table?
+
+--Answer:
+
+-- Orders should not be stored inside the users table because one user can have many orders (one-to-many relationship).
+-- Storing orders in the users table causes data duplication, breaks database normalization, and makes updates difficult.
+-- Separate tables ensure better scalability and data integrity.
