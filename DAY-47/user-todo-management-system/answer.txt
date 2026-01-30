@@ -1,0 +1,7 @@
+Why is cascade delete better handled at the database level instead of the application level?
+
+Answer:
+
+Cascade delete is better handled at the database level because the database automatically maintains data consistency.
+When a parent record is deleted, the database ensures all related child records are removed safely and completely.
+This prevents orphan data, reduces extra code in the application, and guarantees correct behavior even if the application crashes or forgets to delete related data.
